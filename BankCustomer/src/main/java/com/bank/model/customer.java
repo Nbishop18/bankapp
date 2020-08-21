@@ -12,30 +12,11 @@ import javax.persistence.Table;
 @Table(name = "CUSTOMER")
 public class customer {
 	
-//	@Id
-//	@Column(name = "CUSTOMERID")
-//	@GeneratedValue(strategy = GenerationType.AUTO)
-//	private int customerID;
-	
 	@Id
 	@Column(name = "CUSTOMERID")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "bankid_generator")
 	@SequenceGenerator(name="bankid_generator", sequenceName = "bankid_generator", initialValue = 1000, allocationSize=100)
 	private int customerID;
-	
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "book_seq")
-//    @GenericGenerator(
-//        name = "book_seq", 
-//        strategy = "org.thoughts.on.java.generators.StringPrefixedSequenceIdGenerator", 
-//        parameters = {
-//            @Parameter(name = StringPrefixedSequenceIdGenerator.INCREMENT_PARAM, value = "50"),
-//            @Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "B_"),
-//            @Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%05d") })
-//	private int customerID;
-
-	
-	
 	
 	@Column(name = "FIRSTNAME", nullable = false)
 	private String firstName;
